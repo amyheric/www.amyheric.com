@@ -1,0 +1,15 @@
+- id: 1
+  title: Porcelain Set
+  description: A porcelain bowl set.
+  image: /assets/images/porcelain-set.jpg
+  price: 125
+  weight: 1.5
+  category: Variety Set
+
+- id: 2
+  title: Bowl Set
+  description: Some type of pottery bowls and shit.
+  image: /assets/images/bowl-set.jpg
+  price: 325
+  weight: 1.25
+  category: Bowl
