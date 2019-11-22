@@ -1,7 +1,11 @@
-# Ignore docs files
-_gh_pages
 _site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+_gh_pages
 .ruby-version
+Gemfile.lock
+vendor
 
 
 # Numerous always-ignore extensions
@@ -16,7 +20,6 @@ _site
 *.vi
 *~
 
-# POSSIBLE ENVIRONMENTS
 
 # OS or Editor folders
 .DS_Store
@@ -32,19 +35,3 @@ nbproject
 *.sublime-workspace
 .idea
 
-# Komodo
-*.komodoproject
-.komodotools
-
-# grunt-html-validation
-validation-status.json
-validation-report.json
-
-# Folders to ignore
-node_modules
-bower_components
-
-# Recommended in Ben Balter's Jekyll Style Guide
-.sass-cache
-.jekyll-metadata
-Gemfile.lock
