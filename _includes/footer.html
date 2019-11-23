@@ -1,4 +1,8 @@
-<footer class="footer">
+{% if site.data.products %}
+    <footer class="footer">
+{% else %}
+    <footer class="footer pinned-footer">
+{% endif %}
   <div class="footer__content">
       <div class="footer__copyright">{{ site.description }}</div>
       <div class="footer__socials">

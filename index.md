@@ -4,6 +4,9 @@
 
 layout: default
 ---
+
 {% for product in site.data.products %}
   {% include product.html %}
+{% else %}
+  Coming soon!
 {% endfor %}
