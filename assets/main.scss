@@ -17,6 +17,7 @@ $size--unit: 8px;
 
 $layout--max-width: 1000px;
 
+
 // Default styling
 * {
   box-sizing: border-box;
@@ -260,6 +261,12 @@ body {
   &__socials {
     margin-left: auto;
   }
+}
+
+.pinned-footer {
+  width: 100%;
+  bottom: 0;
+  position: fixed;
 }
 
 .snipcart-layout__header {
