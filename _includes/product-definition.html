@@ -1,9 +1,9 @@
 <button
-  class="buy-button snipcart-add-item"
+  class="buy-button"
   data-item-id="{{ product.id }}"
   data-item-name="{{ product.title }}"
   data-item-price="{{ product.price }}"
   data-item-image="{{ product.image }}"
   data-item-description="{{ product.description | remove: '<p>' | remove: '</p>' }}">
-  Add to cart (${{ product.price }})
+  Out of stock
 </button>
