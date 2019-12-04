@@ -1,15 +1,23 @@
-#- id: 1
-#  title: Porcelain Set
-#  description: A porcelain bowl set with bud vase.
-#  image: /assets/images/porcelain-set.jpg
-#  price: 125
-#  weight: 1.5
-#  category: Variety Set
-#
+- id: 1
+  title: Porcelain Set
+  description: Porcelain stoneware bowl set with bud vase. Gloss white glaze. Hand thrown in Portland, Maine.
+  image: /assets/images/porcelain-set.jpg
+  price: 110
+  weight: 1.5
+  category: Variety Set
+
 #- id: 2
-#  title: Bowl Set
-#  description: A simple bowl set.
-#  image: /assets/images/bowl-set.jpg
-#  price: 325
+#  title: Bud Vase
+#  description: Brown stoneware bud vase. Matte white glaze. Hand thrown in Portland, Maine.
+#  image: /assets/images/white-vase2.jpg
+#  price: 18
 #  weight: 1.25
 #  category: Bowl
+
+- id: 3
+  title: Mugs
+  description: Brown stoneware mugs. Matte green glaze with satin black interior. Hand thrown in Portland, Maine.
+  image: /assets/images/green-mugs.jpg
+  price: 40
+  weight: 1.25
+  category: Bowl
