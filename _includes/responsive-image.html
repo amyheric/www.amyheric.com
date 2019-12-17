@@ -1,0 +1,9 @@
+{% capture cdn %}{% if site.production %}{{site.cdn_url}}{% endif %}{% endcapture %}
+
+{% capture srcset %}
+    {% for i in resized %}
+        {{cdn}}/{{ i.path }} {{ i.width }}w,
+    {% endfor %}
+{% endcapture %}
+
+<img src="{{cdn}}/assets/image/resized/1120/{{original.basename}}" alt="{{ alt }}" title="{{ title }}" class="product__image" srcset="{{ srcset | strip_newlines }} {{cdn}}/{{ original.path }} {{ original.width }}w">

@@ -1,7 +1,7 @@
 - id: 1
-  title: Porcelain Set
+  name: Porcelain Set
   description: Porcelain stoneware bowl set with bud vase. Gloss white glaze. Hand thrown in Portland, Maine.
-  image: /assets/images/porcelain-set.jpg
+  image: assets/images/porcelain-set.jpg
   price: 110
   weight: 1.5
   category: Variety Set
@@ -15,9 +15,9 @@
 #  category: Bowl
 
 - id: 3
-  title: Mugs
+  name: Mugs
   description: Brown stoneware mugs. Matte green glaze with satin black interior. Hand thrown in Portland, Maine.
-  image: /assets/images/green-mugs.jpg
+  image: assets/images/green-mugs.jpg
   price: 40
   weight: 1.25
   category: Bowl
