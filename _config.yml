@@ -27,7 +27,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 instagram: https://instagram.com/amy_heric_pottery
 snipcart-api: N2ZhMGQ5MzYtZGE2Zi00MTk2LTliOTItZmFmMGQyNzU4MzI5NjM3MDg2NDM4NjUzNTAxODMz
 
-production: true
+production: false
 
 cdn_url: https://cdn.amyheric.com
 
