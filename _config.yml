@@ -27,9 +27,14 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 instagram: https://instagram.com/amy_heric_pottery
 snipcart-api: N2ZhMGQ5MzYtZGE2Zi00MTk2LTliOTItZmFmMGQyNzU4MzI5NjM3MDg2NDM4NjUzNTAxODMz
 
+production: true
+
+cdn_url: https://cdn.amyheric.com
+
 # Build settings
 plugins:
   - jekyll-feed
+  - jekyll-responsive-image
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -53,3 +58,40 @@ plugins:
 
 collections:
   - products
+## jekyll-responsive-image plugin config
+responsive_image:
+  # [Required]
+  # Path to the image template.
+  template: _includes/responsive-image.html
+
+  # [Optional, Default: 85]
+  # Quality to use when resizing images.
+  default_quality: 80
+
+  # [Optional, Default: []]
+  # An array of resize configuration objects. Each object must contain at least
+  # a `width` value.
+  sizes:
+    - width: 480  # [Required] How wide the resized image will be.
+    - width: 800
+    - width: 1120
+    - width: 1300
+
+  # [Optional, Default: assets]
+  # The base directory where assets are stored. This is used to determine the
+  # `dirname` value in `output_path_format` below.
+  base_path: assets
+
+  # [Optional, Default: assets/resized/%{filename}-%{width}x%{height}.%{extension}]
+  # The template used when generating filenames for resized images. Must be a
+  # relative path.
+  #
+  # Parameters available are:
+  #   %{dirname}     Directory of the file relative to `base_path` (assets/sub/dir/some-file.jpg => sub/dir)
+  #   %{basename}    Basename of the file (assets/some-file.jpg => some-file.jpg)
+  #   %{filename}    Basename without the extension (assets/some-file.jpg => some-file)
+  #   %{extension}   Extension of the file (assets/some-file.jpg => jpg)
+  #   %{width}       Width of the resized image
+  #   %{height}      Height of the resized image
+  #
+  output_path_format: assets/image/resized/%{width}/%{basename}
