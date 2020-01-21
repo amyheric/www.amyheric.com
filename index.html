@@ -4,9 +4,10 @@
 
 layout: default
 ---
-
+<div class="row">
 {% for product in site.data.products %}
-  {% include product.html %}
+    {% include product.html %}
 {% else %}
   Coming soon!
 {% endfor %}
+</div>

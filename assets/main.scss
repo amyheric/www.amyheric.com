@@ -148,85 +148,31 @@ body {
   @include fit-to-layout-and-center;
 }
 
-.product {
+.row {
   display: flex;
-  align-items: center;
   flex-direction: row;
-  &:nth-of-type(even) {
-    flex-direction: row-reverse;
-  }
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
 
-  &:nth-last-of-type(odd) & {
-    &__information {
-      margin-left: 0;
-      margin-right: $size--unit * 4;
-      @include sm {
-        margin-right: 0;
-      }
-    }
+.column {
+}
 
-    &__image {
-      margin-right: $size--unit * 4;
-      box-shadow: 30px 30px 50px transparentize(darken($color--primary, 50%), 0.9);
-      @include sm {
-        margin-right: $size--unit * 4;
-      }
-    }
-  }
+.product {
+  max-width: 475px;
+  margin-bottom: $size--unit * 12;
+}
 
-  &:not(:last-child) {
-    margin-bottom: $size--unit * 12;
-  }
+.product > img {
+  max-width: 100%;
+  box-shadow: -30px 30px 50px transparentize(darken($color--primary, 50%), 0.9);
+  border-radius: $size--unit;
+}
 
-  @include sm {
-    flex-direction: column;
-    &:nth-of-type(even) {
-      flex-direction: column;
-    }
-    justify-content: center;
-  }
-
-  &__information {
-    flex: 1;
-    margin-left: $size--unit * 4;
-    @include sm {
-      margin-left: 0;
-    }
-  }
-
-  &__image {
-    flex: 1;
-    height: 100%;
-    width: 100%;
-    max-width: 500px;
-    max-height: 400px;
-    background-size: cover;
-    box-shadow: -30px 30px 50px transparentize(darken($color--primary, 50%), 0.9);
-    @include sm {
-      box-shadow: 30px 30px 50px transparentize(darken($color--primary, 50%), 0.9);
-      &:last-child {
-        display: none;
-      }
-    }
-
-    @include ms {
-      &:not(:last-child) {
-        display: none;
-      }
-    }
-    margin-right: auto;
-    border-radius: $size--unit;
-  }
-
-  &__title {
-    margin-top: 0;
-    font-size: $size--unit * 5;
-  }
-
-  &__description {
-    font-size: $size--unit * 2.5;
-    line-height: $size--unit * 3.5;
-  }
+.product > p {
+  font-size: $size--unit * 2.5;
+  line-height: $size--unit * 3.5;
 }
 
 .buy-button {

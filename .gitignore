@@ -2,7 +2,6 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
-_gh_pages
 .ruby-version
 Gemfile.lock
 vendor
@@ -34,4 +33,6 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 .idea
+
+assets/image/resized
 
