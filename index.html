@@ -4,9 +4,10 @@
 
 layout: default
 ---
-
-{% for product in site.data.products %}
-  {% include product.html %}
-{% else %}
-  Coming soon!
-{% endfor %}
+<section class="gallery">
+  {% for product in site.data.products %}
+    {% include product.html %}
+  {% else %}
+    Coming soon!
+  {% endfor %}
+</section>

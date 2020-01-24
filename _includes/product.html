@@ -1,19 +1,17 @@
-<div class="product">
-  <div class="product__information">
-    <h2 class="product__title">{{ product.title }}</h2>
-    {% responsive_image_block %}
+
+<div class="gallery-image">
+   {% responsive_image_block %}
       path: {{ product.image }}
       alt: {{ product.name }}
       title: {{ product.name }}
       class: {{ product__image }}
-    {% endresponsive_image_block %}
-    <p class="product__description">{{ product.description | remove: '<p>' | remove: '</p>' }}</p>
-    {% include product-definition.html %}
-  </div>
-  {% responsive_image_block %}
-    path: {{ product.image }}
-    alt: {{ product.name }}
-    title: {{ product.name }}
-    class: {{ product__image }}
-  {% endresponsive_image_block %}
+   {% endresponsive_image_block %}
 </div>
+
+<div class="description">
+   <p>{{ product.description | remove: '<p>' | remove: '</p>' }}</p>
+   {% include product-definition.html %}
+</div>
+
+
+
