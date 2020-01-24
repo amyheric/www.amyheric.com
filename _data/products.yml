@@ -15,9 +15,10 @@
   category: Variety Set
 
 - id: 3
-  title: Bud Vase
+  name: Bud Vase
   description: Brown stoneware bud vase. Matte white glaze. Hand thrown in Portland, Maine.
   image: assets/image/white-vase2.jpg
   price: 18
   weight: 1.25
   category: Bud Vase
+

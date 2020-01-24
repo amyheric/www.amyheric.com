@@ -1,14 +1,17 @@
 
-<div class="column">
-    <div class="product">
-        {% responsive_image_block %}
-          path: {{ product.image }}
-          alt: {{ product.name }}
-          title: {{ product.name }}
-          class: {{ product__image }}
-        {% endresponsive_image_block %}
-        <p>{{ product.description | remove: '<p>' | remove: '</p>' }}</p>
-        {% include product-definition.html %}
-    </div>
+<div class="gallery-image">
+   {% responsive_image_block %}
+      path: {{ product.image }}
+      alt: {{ product.name }}
+      title: {{ product.name }}
+      class: {{ product__image }}
+   {% endresponsive_image_block %}
 </div>
+
+<div class="description">
+   <p>{{ product.description | remove: '<p>' | remove: '</p>' }}</p>
+   {% include product-definition.html %}
+</div>
+
+
 
