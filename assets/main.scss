@@ -6,33 +6,39 @@
 
 
 // Variables
-$color--default: #3a3a3a;
-$color--light: lighten($color--default, 65%);
-$color--primary: #429bfc;
-$color--secondary: #429bfc;
-$color--background: #f8faff;
-$color--secondary-background: #f0f5f6;
+$color-default: #3a3a3a;
+$color-light: lighten($color-default, 65%);
+$color-primary: #429bfc;
+$color-secondary: #429bfc;
+$color-background: #f8faff;
+$color-secondary-background: #f0f5f6;
 
-$size--unit: 8px;
+$size-unit: 8px;
+
+@mixin max-width {
+  max-width: 1000px;
+}
+
 
 // Default styling
 * {
   box-sizing: border-box;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: $size--unit * 2;
-  color: $color--default;
+  font-size: $size-unit * 2;
+  color: $color-default;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  background-color: $color--secondary-background;
+  background-color: $color-background;
 }
 
 h1 {
+  font-family: 'Sorts Mill Goudy', serif;
   font-weight: bold;
-  font-size: $size--unit * 3;
+  font-size: 2.5rem;
 }
 
 @mixin button-hover($color) {
@@ -64,11 +70,12 @@ h1 {
 }
 
 @mixin fit-to-layout-and-center {
+  @include max-width;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: $size--unit * 3;
-  padding-right: $size--unit * 3;
+  padding-left: $size-unit * 3;
+  padding-right: $size-unit * 3;
 }
 
 // Components
@@ -76,36 +83,35 @@ h1 {
   width: 100%;
   display: flex;
   align-items: center;
-  padding-top: $size--unit * 4;
-  padding-bottom: $size--unit * 4;
-  border-bottom: 1px solid $color--light;
-  background-color: $color--background;
+  height: 90px;
+  border-bottom: 1px solid $color-light;
+  background-color: $color-secondary-background;
 
-  &__container {
+  &_container {
     display: flex;
     justify-content: center;
     @include fit-to-layout-and-center;
   }
 
-  &__branding {
+  &_branding {
     all: unset;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  &__logo {
-    max-height: $size--unit*4;
-    margin-right: $size--unit*1;
+  &_logo {
+    max-height: $size-unit*4;
+    margin-right: $size-unit*1;
   }
 
-  &__title {
+  &_title {
     font-weight: bold;
-    font-size: $size--unit * 3;
+    font-size: $size-unit * 3;
     cursor: pointer;
   }
 
-  &__checkout {
+  &_checkout {
     all: unset;
     cursor: pointer;
     display: flex;
@@ -113,12 +119,12 @@ h1 {
     margin-left: auto;
     font-weight: bold;
     svg {
-      margin-right: $size--unit * 1;
+      margin-right: $size-unit * 1;
     }
   }
 
-  &__checkout-fill {
-    fill: $color--primary;
+  &_checkout-fill {
+    fill: $color-primary;
   }
 }
 
@@ -127,10 +133,8 @@ h1 {
 }
 
 .gallery {
+  @include max-width;
   margin: 0 auto;
-  max-width: 1000px;
-  //display: grid;
-  //grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -159,40 +163,40 @@ h1 {
 }
 
 .description p {
-  font-size: $size--unit * 2.5;
-  line-height: $size--unit * 3.5;
+  font-size: $size-unit * 2.5;
+  line-height: $size-unit * 3.5;
 }
 
 .buy-button {
   all: unset;
   color: white;
-  background-color: $color--primary;
-  border: 1px solid darken($color--primary, 3%);
-  text-shadow: 2px 2px 5px darken($color--primary, 3%);
+  background-color: $color-primary;
+  border: 1px solid darken($color-primary, 3%);
+  text-shadow: 2px 2px 5px darken($color-primary, 3%);
   border-radius: 3px;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 2px;
-  padding: $size--unit * 2;
-  padding-left: $size--unit * 3;
-  padding-right: $size--unit * 3;
-  margin-top: $size--unit * 2;
-  @include button-hover($color--primary);
+  padding: $size-unit * 2;
+  padding-left: $size-unit * 3;
+  padding-right: $size-unit * 3;
+  margin-top: $size-unit * 2;
+  @include button-hover($color-primary);
 }
 
 .footer {
-  border-top: 1px solid $color--light;
-  background-color: $color--background;
-  margin-top: $size--unit * 12;
-  &__content {
+  border-top: 1px solid $color-light;
+  background-color: $color-secondary-background;
+  margin-top: $size-unit * 12;
+  &_content {
     display: flex;
     @include fit-to-layout-and-center();
-    padding-top: $size--unit * 4;
-    padding-bottom: $size--unit * 4;
+    padding-top: $size-unit * 4;
+    padding-bottom: $size-unit * 4;
   }
 
-  &__socials {
+  &_socials {
     margin-left: auto;
   }
 }
@@ -203,30 +207,6 @@ h1 {
   position: fixed;
 }
 
-.snipcart-layout__header {
-  min-height: 80px;
-}
-
-.go-back {
-    display: flex;
-    color: white;
-    padding-top: $size--unit*3;
-    padding-bottom: $size--unit*3;
-    background-color: #888f91;
-    box-shadow: 0px 0px 10px transparentize($color--default, 0.8);
-    border-bottom: 1px solid darken(#888f91, 5%);
-
-    &__container {
-        @include fit-to-layout-and-center;
-        a, span {
-            color: white;
-        }
-
-        a {
-            &:hover {
-              text-decoration: underline;
-            }
-            text-decoration: none;
-        }
-    }
+.snipcart-modal__container {
+  top: 90px !important;
 }

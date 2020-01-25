@@ -1,7 +1,7 @@
 
 <div class="gallery-image">
    {% responsive_image_block %}
-      path: {{ product.image }}
+      path: {{ product.images | first }}
       alt: {{ product.name }}
       title: {{ product.name }}
       class: {{ product__image }}
@@ -9,6 +9,7 @@
 </div>
 
 <div class="description">
+   <h1>{{ product.name }}</h1>
    <p>{{ product.description | remove: '<p>' | remove: '</p>' }}</p>
    {% include product-definition.html %}
 </div>
