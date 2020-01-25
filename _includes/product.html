@@ -1,16 +1,33 @@
 
-<div class="gallery-image">
+<div class="gallery">
    {% responsive_image_block %}
-      path: {{ product.image }}
+      path: {{ product.images | first }}
       alt: {{ product.name }}
       title: {{ product.name }}
-      class: {{ product__image }}
+      name: {{ product.id }}
+      thumb: {{ false }}
    {% endresponsive_image_block %}
+
+   {% if product.images.size > 1 %}
+      <div class="nav">
+         {% for image in product.images %}
+            {% responsive_image_block %}
+               path: {{ image }}
+               alt: {{ product.name + " thumb"}}
+               title: {{ product.name + " thumb"}}
+               name: {{ product.id }}
+               thumb: {{ true }}
+            {% endresponsive_image_block %}
+         {% endfor %}
+      </div>
+   {% endif %}
 </div>
 
 <div class="description">
+   <h1>{{ product.name }}</h1>
    <p>{{ product.description | remove: '<p>' | remove: '</p>' }}</p>
    {% include product-definition.html %}
+   <hr/>
 </div>
 
 

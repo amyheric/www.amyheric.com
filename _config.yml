@@ -66,16 +66,17 @@ responsive_image:
 
   # [Optional, Default: 85]
   # Quality to use when resizing images.
-  default_quality: 80
+  default_quality: 85
+  auto_rotate: false
+  strip: true
 
   # [Optional, Default: []]
   # An array of resize configuration objects. Each object must contain at least
   # a `width` value.
-  sizes:
-    - width: 475 # [Required] How wide the resized image will be.
-    - width: 640
-    - width: 1300
-    - width: 1920
+  sizes: # [Required] How wide the resized image will be.
+    - width: 100 # thumbs
+    - width: 475 # main product gallery
+    - width: 1920 # unused but here for future use
 
   # [Optional, Default: assets]
   # The base directory where assets are stored. This is used to determine the

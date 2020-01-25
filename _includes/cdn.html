@@ -1,0 +1,8 @@
+---
+---
+
+{%- capture cdn -%}
+   {%- if site.production -%}
+      {{ site.cdn_url }}
+   {%- endif -%}
+{%- endcapture -%}
