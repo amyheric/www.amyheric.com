@@ -4,10 +4,15 @@
 
 layout: default
 ---
-<section class="gallery">
+<section class="products">
   {% for product in site.data.products %}
     {% include product.html %}
   {% else %}
     Coming soon!
   {% endfor %}
 </section>
+
+<script>
+  const setImage = (id, src) =>
+    document[id].src = src;
+</script>

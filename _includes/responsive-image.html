@@ -1,3 +1,4 @@
+
 {%- capture cdn -%}
     {%- if site.production -%}
         {{ site.cdn_url }}
@@ -10,7 +11,14 @@
     {%- endfor -%}
 {%- endcapture -%}
 
-<img src="{{ cdn }}/assets/image/{{original.basename}}"
-     alt="{{ alt }}"
-     title="{{ title }}"
-     srcset="{{ srcset | strip_newlines }}">
+{% if thumb %}
+    <img src="{{ cdn }}/assets/image/resized/100/{{original.basename}}"
+         alt="{{ alt }}"
+         title="{{ title }}"
+         onclick="setImage('{{ name }}', '{{ cdn }}/assets/image/resized/475/{{original.basename}}')"/>
+{% else %}
+    <img src="{{ cdn }}/assets/image/resized/475/{{original.basename}}"
+         alt="{{ alt }}"
+         title="{{ title }}"
+         name="{{ name }}"/>
+{% endif %}

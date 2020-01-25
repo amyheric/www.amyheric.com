@@ -19,6 +19,12 @@ $size-unit: 8px;
   max-width: 1000px;
 }
 
+@mixin single-column {
+  @media screen and (max-width: 900px) {
+    @content;
+  }
+}
+
 
 // Default styling
 * {
@@ -132,7 +138,7 @@ h1 {
   padding: 2rem;
 }
 
-.gallery {
+.products {
   @include max-width;
   margin: 0 auto;
   display: flex;
@@ -140,31 +146,64 @@ h1 {
   justify-content: space-evenly;
 }
 
-.gallery div:first-of-type {
+.products div:first-of-type {
   margin-top: 0px !important;
 }
 
-.gallery > .gallery-image {
+.gallery {
   overflow: hidden;
   position: relative;
-  max-width: 450px;
-  margin: 50px 0 0 0;
+  width: 450px;
+  margin: 60px 0 0 0;
+  @include single-column {
+    margin: 0;
+    border-top: 1px solid $color-light;
+  }
+  & > img {
+    width: 100%;
+    border-radius: .5em;
+  }
 }
 
-.gallery > .gallery-image > img {
-  width: 100%;
-  border-radius: .5rem;
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  & img {
+    height: 70px;
+    margin: 10px 10px 0 0;
+    object-fit: cover;
+    border-radius: .5em;
+    cursor: pointer;
+  }
 }
 
 .description {
+  display: inline;
   max-width: 450px;
-  margin: auto 0 auto 0;
-  padding: 0 10px 0 10px;
-}
-
-.description p {
-  font-size: $size-unit * 2.5;
-  line-height: $size-unit * 3.5;
+  @include single-column {
+    padding: 0;
+  }
+  margin: auto;
+  & > p {
+    font-size: $size-unit * 2.5;
+    line-height: $size-unit * 3.5;
+  }
+  & button {
+    margin-bottom: 50px;
+    @include single-column {
+      margin-bottom: 25px;
+    };
+  }
+  & hr {
+    display: none;
+    @include single-column {
+      display: block;
+      border: 0;
+      border-top: 1px solid $color-light;
+      padding-bottom: 25px;
+    }
+  }
 }
 
 .buy-button {
@@ -210,3 +249,4 @@ h1 {
 .snipcart-modal__container {
   top: 90px !important;
 }
+
