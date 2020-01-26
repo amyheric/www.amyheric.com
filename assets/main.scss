@@ -80,8 +80,7 @@ h1 {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: $size-unit * 3;
-  padding-right: $size-unit * 3;
+  padding: 0 $size-unit * 3 0 $size-unit * 3;
 }
 
 // Components
